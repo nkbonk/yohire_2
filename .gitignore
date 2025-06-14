@@ -4,11 +4,9 @@ __pycache__/
 *$py.class
 
 # Virtual environments
-venv/
 .env/
 
 # IDE
-.idea/
 *.iml
 
 # Local env file
