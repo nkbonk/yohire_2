@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env/
+
+# IDE
+*.iml
+
+# Local env file
+.env
+
+# Docker
+*.log

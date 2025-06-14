@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:13                  # берём офф.образ Postgres
+    restart: always                     # рестартим при фейлах
+    env_file:                           # подгружаем креды из .env
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql/data  # монтируем том, чтобы бэкапы не улетали
+    ports:
+      - "5432:5432"                     # пробрасываем порт для DBeaver/локали
+
+  web:
+    build: .                            # билдим Dockerfile из корня
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./:/app                         # монтируем код для авто-reload
+    ports:
+      - "8000:8000"                     # пробрасываем для браузера/Postman
+    env_file:
+      - .env                            # creds для подключения к БД
+    depends_on:
+      - db                              # ждём, пока БД не встанет
+
+
+volumes:
+  db_data:                              # описываем том для БД
