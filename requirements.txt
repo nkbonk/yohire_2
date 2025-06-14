@@ -1,0 +1,14 @@
+# python-dotenv: парсит .env и грузит переменные окружения (чтобы не хардкодить креды)
+python-dotenv==1.1.0
+
+# fastapi: асинхронный веб-фреймворк для API на Python, автодокументация Swagger
+fastapi==0.115.12
+
+# sqlalchemy: мощный SQL-toolkit и ORM, описываешь модели на Python, а он генерит SQL
+sqlalchemy==2.0.41
+
+# uvicorn: лёгкий ASGI-сервер для запуска FastAPI с поддержкой --reload
+uvicorn==0.34.3
+
+# psycopg2-binary: бинарный драйвер PostgreSQL, чтоб без геморроя в dev сразу юзать
+psycopg2-binary==2.9.10
